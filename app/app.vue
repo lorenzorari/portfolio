@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Section from '@/components/Section.vue';
-import { cn } from './lib/utils';
-import ProjectCard from './components/ProjectCard.vue';
+import ProjectCard from '@/components/ProjectCard.vue';
+import ExperienceCard from '@/components/ui/ExperienceCard.vue';
+import { experiences } from '@/data/experience';
 
 useHead({
   title: 'Lorenzo Ferrari',
@@ -26,6 +27,11 @@ useHead({
             Built a mini Pokédex in React using the PokéAPI, displaying each Pokémon’s descriptions, evolutions, and
             stats.
           </ProjectCard>
+        </div>
+      </Section>
+      <Section title="experience">
+        <div class="flex flex-col gap-3">
+          <ExperienceCard v-for="experience in experiences" :key="experience.title" :="experience" />
         </div>
       </Section>
     </div>

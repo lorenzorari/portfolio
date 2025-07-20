@@ -1,13 +1,12 @@
 // @ts-check
-import withNuxt from './.nuxt/eslint.config.mjs';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
-import importPlugin from 'eslint-plugin-import';
+import withNuxt from './.nuxt/eslint.config.mjs';
 
 export default withNuxt(
   // Your custom configs here
-  importPlugin.flatConfigs.recommended,
+  // importPlugin.flatConfigs.recommended,
   {
-    files: ['**/*.ts', '**/*.vue'],
+    files: ['**/*.ts', '**/*.mjs', '**/*.vue'],
     plugins: {
       'unused-imports': unusedImportsPlugin,
     },
