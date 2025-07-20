@@ -1,4 +1,5 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.enable": true,
+  "tailwindCSS.experimental.configFile": "./app/assets/css/main.css"
 }

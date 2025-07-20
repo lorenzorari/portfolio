@@ -1,1 +1,10 @@
-@import "tailwindcss"
+@import 'tailwindcss';
+
+@theme {
+  --color-black: #3c3c3c;
+  --color-primary: #ceb992;
+}
+
+:root {
+  color: var(--color-black);
+}
