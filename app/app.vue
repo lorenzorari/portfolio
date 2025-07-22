@@ -3,10 +3,30 @@ import Section from '@/components/Section.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 import ExperienceCard from '@/components/ui/ExperienceCard.vue';
 import { experiences } from '@/data/experience';
+import Button from './components/ui/Button.vue';
+import { ArrowUpRight } from 'lucide-vue-next';
 
 useHead({
   title: 'Lorenzo Ferrari',
 });
+
+const connectButtons = [
+  {
+    label: 'Github',
+    href: 'https://github.com/lorenzorari',
+    externalLink: true,
+  },
+  {
+    label: 'Linkedin',
+    href: '#',
+    externalLink: true,
+  },
+  {
+    label: 'Mail',
+    href: '#',
+    externalLink: true,
+  },
+];
 </script>
 
 <template>
@@ -32,6 +52,18 @@ useHead({
       <Section title="experience">
         <div class="flex flex-col gap-3">
           <ExperienceCard v-for="experience in experiences" :key="experience.title" :="experience" />
+        </div>
+      </Section>
+      <Section title="connect">
+        <div class="flex gap-2">
+          <template v-for="button in connectButtons" :key="button.label">
+            <Button as-child>
+              <a :href="button.href" :target="button.externalLink ? '_blank' : undefined">
+                {{ button.label }}
+                <ArrowUpRight v-if="button.externalLink" :size="16" />
+              </a>
+            </Button>
+          </template>
         </div>
       </Section>
     </div>

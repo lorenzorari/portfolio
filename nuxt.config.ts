@@ -12,9 +12,4 @@ export default defineNuxtConfig({
   components: {
     dirs: [],
   },
-  eslint: {
-    config: {
-      standalone: false,
-    },
-  },
 });

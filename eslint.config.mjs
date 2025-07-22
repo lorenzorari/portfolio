@@ -1,10 +1,15 @@
 // @ts-check
-import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 import withNuxt from './.nuxt/eslint.config.mjs';
+import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 
 export default withNuxt(
   // Your custom configs here
-  // importPlugin.flatConfigs.recommended,
+  {
+    files: ['**/*.vue'],
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
   {
     files: ['**/*.ts', '**/*.mjs', '**/*.vue'],
     plugins: {
