@@ -1,6 +1,6 @@
-import type { ComponentProps } from '@/types/utils';
+import type { ComponentProps } from '~/types/utils';
 import type ProjectCard from '~/components/ProjectCard.vue';
-import Logo from '@@/public/images/projects/pocketex-logo.svg';
+import Logo from '~~/public/images/projects/pocketex-logo.svg';
 
 export const projectCards: ComponentProps<typeof ProjectCard>[] = [
   {

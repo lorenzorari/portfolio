@@ -1,33 +1,16 @@
 <script setup lang="ts">
-import Section from '@/components/Section.vue';
-import ProjectCard from '@/components/ProjectCard.vue';
-import ExperienceCard from '@/components/ui/ExperienceCard.vue';
-import { experiences } from '@/data/experience';
+import Section from '~/components/Section.vue';
+import ProjectCard from '~/components/ProjectCard.vue';
+import ExperienceCard from '~/components/ui/ExperienceCard.vue';
+import { experiences } from '~/data/experience';
 import Button from './components/ui/Button.vue';
 import { ArrowUpRight } from 'lucide-vue-next';
-import { projectCards } from '@/data/projects';
+import { projectCards } from '~/data/projects';
+import { connectButtons } from '~/data/connect';
 
 useHead({
   title: 'Lorenzo Ferrari',
 });
-
-const connectButtons = [
-  {
-    label: 'Github',
-    href: 'https://github.com/lorenzorari',
-    externalLink: true,
-  },
-  {
-    label: 'Linkedin',
-    href: '#',
-    externalLink: true,
-  },
-  {
-    label: 'Mail',
-    href: '#',
-    externalLink: true,
-  },
-];
 </script>
 
 <template>
