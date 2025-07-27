@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Section from '~/components/Section.vue';
-import ProjectCard from '~/components/ProjectCard.vue';
-import ExperienceCard from '~/components/ui/ExperienceCard.vue';
-import { experiences } from '~/data/experience';
-import Button from './components/ui/Button.vue';
 import { ArrowUpRight } from 'lucide-vue-next';
-import { projectCards } from '~/data/projects';
+import ProjectCard from '~/components/ProjectCard.vue';
+import Section from '~/components/Section.vue';
+import ExperienceCard from '~/components/ui/ExperienceCard.vue';
 import { connectButtons } from '~/data/connect';
+import { experiences } from '~/data/experience';
+import { projectCards } from '~/data/projects';
+import Button from './components/ui/Button.vue';
 
 useHead({
   title: 'Lorenzo Ferrari',

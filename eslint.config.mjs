@@ -1,6 +1,6 @@
 // @ts-check
-import withNuxt from './.nuxt/eslint.config.mjs';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
+import withNuxt from './.nuxt/eslint.config.mjs';
 
 export default withNuxt(
   // Your custom configs here
@@ -29,23 +29,28 @@ export default withNuxt(
       ],
 
       // Import organization
-      // 'import/order': [
-      //   'error',
-      //   {
-      //     groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-      //     pathGroups: [
-      //       {
-      //         pattern: '@/**',
-      //         group: 'internal',
-      //         position: 'after',
-      //       },
-      //     ],
-      //     alphabetize: {
-      //       order: 'asc',
-      //       caseInsensitive: true,
-      //     },
-      //   },
-      // ],
+      'import/order': [
+        'error',
+        {
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+          pathGroups: [
+            {
+              pattern: '~/**',
+              group: 'internal',
+              position: 'after',
+            },
+            {
+              pattern: '@/**',
+              group: 'internal',
+              position: 'after',
+            },
+          ],
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+        },
+      ],
     },
   },
 );
