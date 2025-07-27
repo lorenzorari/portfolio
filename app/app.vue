@@ -5,6 +5,7 @@ import ExperienceCard from '@/components/ui/ExperienceCard.vue';
 import { experiences } from '@/data/experience';
 import Button from './components/ui/Button.vue';
 import { ArrowUpRight } from 'lucide-vue-next';
+import { projectCards } from '@/data/projects';
 
 useHead({
   title: 'Lorenzo Ferrari',
@@ -43,10 +44,13 @@ const connectButtons = [
       </Section>
       <Section title="projects">
         <div class="grid grid-cols-2 gap-3">
-          <ProjectCard title="Pocketex">
-            Built a mini Pokédex in React using the PokéAPI, displaying each Pokémon’s descriptions, evolutions, and
-            stats.
-          </ProjectCard>
+          <ProjectCard
+            v-for="project in projectCards"
+            :key="project.title"
+            :title="project.title"
+            :svg-icon="project.svgIcon"
+            :description="project.description"
+          />
         </div>
       </Section>
       <Section title="experience">
