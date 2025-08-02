@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ArrowUpRight } from 'lucide-vue-next';
+import Header from '~/components/layout/Header.vue';
 import ProjectCard from '~/components/ProjectCard.vue';
 import Section from '~/components/Section.vue';
-import ThemeSwitcher from '~/components/ThemeSwitcher.vue';
 import ExperienceCard from '~/components/ui/ExperienceCard.vue';
 import { connectButtons } from '~/data/connect';
 import { experiences } from '~/data/experience';
@@ -15,12 +15,7 @@ useHead({
 </script>
 
 <template>
-  <header class="mx-auto mb-10 flex max-w-[600px] justify-between py-4">
-    <h1 class="text-2xl font-bold italic">LF<span class="text-primary">.</span></h1>
-    <div>
-      <ThemeSwitcher />
-    </div>
-  </header>
+  <Header />
   <main>
     <div class="mx-auto max-w-[600px]">
       <Section title="Introduction">
