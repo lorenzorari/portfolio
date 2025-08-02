@@ -17,9 +17,9 @@ defineProps<Props>();
     <div class="flex justify-between">
       <div>
         <h3 class="font-bold">{{ title }}</h3>
-        <span class="text-sm text-gray-500">{{ subtitle }}</span>
+        <span class="text-muted-foreground text-sm">{{ subtitle }}</span>
       </div>
-      <span class="text-gray-500">{{ period }}</span>
+      <span class="text-muted-foreground">{{ period }}</span>
     </div>
   </Card>
 </template>

@@ -18,7 +18,7 @@ withDefaults(defineProps<Props>(), {
   <Primitive
     :as="as"
     :as-child="asChild"
-    class="flex items-center gap-1 rounded-full bg-gray-100 px-4 py-1 transition-colors hover:bg-black hover:text-white"
+    class="dark:bg-muted flex items-center gap-1 rounded-full bg-gray-100 px-4 py-1 transition-colors hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
   >
     <slot />
   </Primitive>

@@ -1,10 +1,24 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-black: #3c3c3c;
   --color-primary: #ceb992;
+  --color-background: #ffffff;
+  --color-foreground: #3c3c3c;
+  --color-muted: #f5f5f5;
+  --color-muted-foreground: #707070;
 }
 
-:root {
+body {
   color: var(--color-black);
+}
+
+.dark body {
+  --color-muted: #4d4d4d;
+  --color-muted-foreground: #a3a3a3;
+
+  background-color: var(--color-black);
+  color: var(--color-white);
 }

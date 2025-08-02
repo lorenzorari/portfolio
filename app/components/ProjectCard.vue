@@ -4,7 +4,7 @@ import Card from '~/components/ui/Card.vue';
 interface Props {
   title: string;
   description: string;
-  svgIcon: string;
+  svgIcon: object;
 }
 
 defineProps<Props>();
@@ -12,11 +12,11 @@ defineProps<Props>();
 
 <template>
   <Card class="group">
-    <div class="mb-2.5 size-8 grayscale-100 transition-all group-hover:grayscale-0">
-      <component :is="svgIcon" />
+    <div class="mb-2.5 size-8 transition-all">
+      <component :is="svgIcon" class="group-[&:not(:hover)]:fill-muted-foreground transition-all" />
     </div>
     <h3 class="mb-2.5 font-bold">{{ title }}</h3>
-    <p class="text-sm text-gray-500">
+    <p class="text-muted-foreground text-sm">
       {{ description }}
     </p>
   </Card>

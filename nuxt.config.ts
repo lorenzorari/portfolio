@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', 'nuxt-svgo'],
+  modules: ['@nuxt/eslint', 'nuxt-svgo', '@nuxtjs/color-mode'],
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()],
@@ -14,5 +14,10 @@ export default defineNuxtConfig({
   },
   svgo: {
     defaultImport: 'component',
+  },
+  colorMode: {
+    classPrefix: '',
+    classSuffix: '',
+    storageKey: 'theme',
   },
 });
