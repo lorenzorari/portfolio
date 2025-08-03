@@ -17,7 +17,7 @@ useHead({
 <template>
   <Header />
   <main>
-    <div class="mx-auto max-w-[600px]">
+    <div class="mx-auto px-4 sm:max-w-[600px] sm:px-0">
       <Section title="Introduction">
         <p class="text-muted-foreground">
           I'm a frontend developer from Belgium. I like building solid, easy-to-use web interfaces and working on side
@@ -25,14 +25,8 @@ useHead({
         </p>
       </Section>
       <Section title="Projects">
-        <div class="grid grid-cols-2 gap-3">
-          <ProjectCard
-            v-for="project in projectCards"
-            :key="project.title"
-            :title="project.title"
-            :svg-icon="project.svgIcon"
-            :description="project.description"
-          />
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <ProjectCard v-for="project in projectCards" :key="project.title" :="project" />
         </div>
       </Section>
       <Section title="Experience">
@@ -41,7 +35,7 @@ useHead({
         </div>
       </Section>
       <Section title="Connect">
-        <div class="flex gap-2">
+        <div class="flex flex-wrap gap-2">
           <template v-for="button in connectButtons" :key="button.label">
             <Button as-child>
               <a :href="button.href" :target="button.externalLink ? '_blank' : undefined">
