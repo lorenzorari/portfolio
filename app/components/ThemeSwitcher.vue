@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import { Moon, Sun } from 'lucide-vue-next';
+import { Moon, Sun, SunMoon } from 'lucide-vue-next';
 
 const colorMode = useColorMode();
+
+const isDark = computed(
+  () => colorMode.preference === 'dark' || (colorMode.preference === 'system' && colorMode.value === 'dark'),
+);
+const isLight = computed(
+  () => colorMode.preference === 'light' || (colorMode.preference === 'system' && colorMode.value === 'light'),
+);
 
 const toggleTheme = (): void => {
   const themes = ['light', 'dark'];
@@ -17,7 +24,12 @@ const toggleTheme = (): void => {
     class="hover:bg-muted text-muted-foreground rounded-md p-2 transition-all hover:text-black dark:hover:text-white"
     @click="toggleTheme"
   >
-    <Moon v-if="$colorMode.preference === 'dark'" class="size-4" />
-    <Sun v-else-if="$colorMode.preference === 'light'" class="size-4" />
+    <ClientOnly>
+      <template #fallback>
+        <SunMoon class="size-4" />
+      </template>
+      <Moon v-if="isDark" class="size-4" />
+      <Sun v-else-if="isLight" class="size-4" />
+    </ClientOnly>
   </button>
 </template>
