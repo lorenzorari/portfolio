@@ -6,12 +6,12 @@ export const connectButtons = [
   },
   {
     label: 'Linkedin',
-    href: '#',
+    href: 'https://www.linkedin.com/in/lorenzo-ferrari2408',
     externalLink: true,
   },
-  {
-    label: 'Mail',
-    href: '#',
-    externalLink: true,
-  },
+  // {
+  //   label: 'Mail',
+  //   href: '#',
+  //   externalLink: true,
+  // },
 ];
