@@ -12,6 +12,10 @@ import Button from './components/ui/Button.vue';
 useHead({
   title: 'Lorenzo Ferrari',
 });
+
+onMounted(() => {
+  umTrackView();
+});
 </script>
 
 <template>
