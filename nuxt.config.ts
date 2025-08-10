@@ -23,6 +23,7 @@ export default defineNuxtConfig({
   umami: {
     host: process.env.NUXT_UMAMI_HOST,
     id: process.env.NUXT_UMAMI_ID,
-    domains: process.env.NUXT_DOMAINS?.split('|'),
+    domains: process.env.NUXT_UMAMI_DOMAINS?.split('|'),
+    logErrors: process.env.NUXT_UMAMI_LOG_ERRORS === 'true',
   },
 });
