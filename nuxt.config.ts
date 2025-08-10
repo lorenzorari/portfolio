@@ -26,4 +26,13 @@ export default defineNuxtConfig({
     domains: process.env.NUXT_UMAMI_DOMAINS?.split('|'),
     logErrors: process.env.NUXT_UMAMI_LOG_ERRORS === 'true',
   },
+  nitro: {
+    routeRules: {
+      '/**': {
+        headers: {
+          'Content-Security-Policy': ["connect-src 'self' https://cloud.umami.is"].join('; '),
+        },
+      },
+    },
+  },
 });
