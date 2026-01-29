@@ -5,7 +5,7 @@ export default defineNuxtPlugin({
       const paramName = 'itsmelolo';
 
       if (paramName in query) {
-        const { itsmelolo, ...otherParams } = query;
+        const { itsmelolo: _, ...otherParams } = query;
 
         navigateTo({ query: otherParams });
         window.localStorage.setItem('umami.disabled', '1');
